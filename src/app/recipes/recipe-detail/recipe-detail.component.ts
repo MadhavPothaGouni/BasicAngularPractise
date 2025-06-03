@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './recipe-detail.component.css'
 })
 export class RecipeDetailComponent {
-
+  storedDetail = '';
+  onDetail(detail: string){
+    this.storedDetail = detail
+    console.log(detail);
+  }
 }
