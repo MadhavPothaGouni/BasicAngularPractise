@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Ingrediant } from '../shared/ingrediant.modal';
 import { ShoppingEditComponent } from './shopping-edit/shopping-edit.component';
+import { shoppingService } from './shopping.service';
 
 @Component({
   selector: 'app-shopping-list',
@@ -8,8 +9,9 @@ import { ShoppingEditComponent } from './shopping-edit/shopping-edit.component';
   styleUrl: './shopping-list.component.css'
 })
 export class ShoppingListComponent {
-  ingredients : Ingrediant[] = [
-    new Ingrediant('Apples', 5),
-    new Ingrediant('Tomatoes', 10)
-  ];
+  ingredients: Ingrediant[];
+  private shoppingService = inject(shoppingService)
+  onIngredientData(ingredient: Ingrediant){
+    console.log(ingredient);
+  }
 }

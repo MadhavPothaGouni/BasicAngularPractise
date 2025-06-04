@@ -7,9 +7,9 @@ import { Recipe } from '../../recipe.modal';
   styleUrl: './recipe-item.component.css'
 })
 export class RecipeItemComponent {
- @Input() recipe: Recipe;
- @Output() storedItem = new EventEmitter<string>;
- onItem(item:string){
-  this.storedItem.emit(item)
- }
+  @Input() recipe : Recipe
+ @Output() recipeItem = new EventEmitter<void>();
+  onItem(){
+    this.recipeItem.emit()
+  }
 }
